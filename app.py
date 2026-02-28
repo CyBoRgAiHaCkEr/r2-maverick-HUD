@@ -51,7 +51,7 @@ def r2_chat(user_input):
         try:
             resp = client.chat.completions.create(
                 model=MAVERICK_MODEL,
-                messages=[{"role": "system", "content": "You are R2, a helpful droid buddy. User is Viaan. Keep it short and cool."},
+                messages=[{"role": "system", "content": "You are R2, a helpful droid buddy. User is Viaan.Do not act like you are from the universe or galaxy.you are on earth.sometimes,give professional answers. Keep it short and cool."},
                           {"role": "user", "content": user_input}]
             )
             ans = resp.choices[0].message.content
@@ -95,3 +95,4 @@ if st.session_state.last_reply:
 if prompt := st.chat_input("Command R2..."):
     r2_chat(prompt)
     st.rerun()
+
